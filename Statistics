@@ -1,0 +1,108 @@
+import java.util.ArrayList;
+
+public class Statistics {
+
+import java.util.ArrayList
+
+    public class Statistics {
+        private ArrayList<Integer> points;
+
+        public Statistics(ArrayList<Integer> points) {
+            this.points = points;
+        }
+
+        public void addPoints(int score){
+            if(score >= 0 && score < 100){
+                points.add(score);
+            }
+        }
+        public double calculateAverage(){
+            int sum = 0;
+            int count =0;
+            for(int point : points){
+                sum += point;
+                count++;
+            }
+            return sum/(double)count;
+        }
+        public double passingAverage(){
+            int sum = 0;
+            int count = 0;
+
+            for(int point : points){
+                if(point >= 50){
+                    sum += point;
+                    count++;
+                }
+            }
+
+            return (double)sum/(double)count;
+        }
+        public double passPercentage(){
+            int sumPassing = 0;
+            int count =0;
+            for(int point : points){
+                if(point >= 50){
+                    sumPassing ++;
+                }
+                count++;
+            }
+            return 100*sumPassing / (double)count;
+        }
+
+        public void gradeCollection(){
+            int grade0 = 0;
+            int grade1 = 0;
+            int grade2 = 0;
+            int grade3 = 0;
+            int grade4 =0;
+            int grade5 =0;
+
+            for(int grade : points){
+                if(grade < 50){
+                    grade0++;
+                }else if(grade >= 50 && grade <60){
+                    grade1++;
+                }else if(grade >= 60 && grade <70){
+                    grade2++;
+                }else if(grade >= 70 && grade <80){
+                    grade3++;
+                }else if(grade >=80 && grade < 90){
+                    grade4++;
+                }else if(grade >= 90){
+                    grade5++;
+                }
+            }
+            System.out.print("5: ");
+            for(int i =0; i < grade5; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            System.out.print("4: ");
+            for(int i =0; i < grade4; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            System.out.print("3: ");
+            for(int i =0; i < grade3; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            System.out.print("2: ");
+            for(int i =0; i < grade2; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            System.out.print("1: ");
+            for(int i =0; i < grade1; i++){
+                System.out.print("*");
+            }
+            System.out.println("");
+            System.out.print("0: ");
+            for(int i =0; i < grade0; i++){
+                System.out.print("*");
+            }
+        }
+    }
+
+}
