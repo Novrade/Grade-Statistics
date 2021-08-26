@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-public class Statistics {
-
-import java.util.ArrayList
-
     public class Statistics {
         private ArrayList<Integer> points;
 
@@ -104,5 +100,3 @@ import java.util.ArrayList
             }
         }
     }
-
-}
